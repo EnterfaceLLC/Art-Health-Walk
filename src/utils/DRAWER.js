@@ -2,14 +2,12 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
+//* SCREEN IMPORTS \\
 import HOME from "../screens/HOME";
 import MAP from "../screens/MAP/MAP";
 
-
-
-//* SCREEN IMPORTS \\
-
 //* STYLES, THEME, ICON IMPORTS \\
+import { palette } from '../theme/colors';
 
 //* DRAWER NAVIGATION CODE \\
 const Draw = createDrawerNavigator();
