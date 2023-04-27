@@ -11,7 +11,18 @@ const Android = Platform.OS === 'android';
 export const styles = StyleSheet.create({
   page: {
     flex: 1,
-    backgroundColor: palette.tertiary,
+    backgroundColor: system.white,
   },
+  map: {
+    width: width,
+    aspectRatio: 3 / 4,
+
+  },
+  body: {
+    flex: 1,
+    backgroundColor: palette.primary,
+    borderTopColor: palette.accent5,
+    borderTopWidth: 5,
+  }
 
 });

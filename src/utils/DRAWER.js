@@ -26,8 +26,13 @@ const DrawerNav = () => {
           }}
         />
         <Draw.Screen
-          name="Explore"
+          name="Explore NOTO"
           component={MAP}
+          options={{
+            headerStyle: { backgroundColor: palette.accent3, borderBottomColor: palette.tertiary, borderBottomWidth: 5 },
+            headerTitleStyle: { color: system.white },
+            headerTintColor: system.white
+          }}
         />
       </Draw.Navigator>
     </NavigationContainer>
