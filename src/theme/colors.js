@@ -6,13 +6,17 @@ export const palette = {
 
   tertiary: '#D51A66', //* Red Violet
 
-  accent1: '##24B2C0', //* Java
+  accent1: '#24B2C0', //* Java
 
-  accent2: '##BCD531', //* Key Lime Pie
+  accent2: '#BCD531', //* Key Lime Pie
 
   accent3: '#19B19A', //* Keppel
 
-  accent4: '##ed8e22', //* Carrot Orange
+  accent4: '#ed8e22', //* Carrot Orange
+
+  accent5: '#ECDE46', //* Maize
+
+  accent6: '#4A9655', //* Shamrock Green
 
 };
 

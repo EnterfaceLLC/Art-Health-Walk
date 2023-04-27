@@ -11,7 +11,58 @@ const Android = Platform.OS === 'android';
 export const styles = StyleSheet.create({
   page: {
     flex: 1,
-    backgroundColor: palette.primary,
+    backgroundColor: system.white,
   },
-
+  header: {
+  },
+  img: {
+    width: width,
+    aspectRatio: 4 / 3,
+  },
+  body: {
+    flex: 1,
+    backgroundColor: palette.secondary,
+    padding: 20,
+    borderTopStartRadius: 60,
+    borderTopEndRadius: 60,
+    elevation: 3,
+  },
+  content: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  dots: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly'
+  },
+  titleTxt: {
+    fontSize: 24,
+    fontWeight: '500',
+    marginBottom: 15,
+    color: system.white
+  },
+  bodyTxt: {
+    fontSize: 16,
+    lineHeight: 22,
+    textAlign: 'justify',
+    color: system.white,
+  },
+  button: {
+    width: 120,
+    height: 55,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 'auto',
+    backgroundColor: palette.accent3,
+    // position: 'absolute',
+    // right: 25,
+    // bottom: 25,
+    elevation: 3,
+  },
+  buttonTxt: {
+    fontSize: 18,
+    fontWeight: '500',
+    color: system.white,
+  }
 });

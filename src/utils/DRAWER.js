@@ -7,7 +7,7 @@ import HOME from "../screens/HOME";
 import MAP from "../screens/MAP/MAP";
 
 //* STYLES, THEME, ICON IMPORTS \\
-import { palette } from '../theme/colors';
+import { palette, system } from '../theme/colors';
 
 //* DRAWER NAVIGATION CODE \\
 const Draw = createDrawerNavigator();
@@ -17,11 +17,16 @@ const DrawerNav = () => {
     <NavigationContainer>
       <Draw.Navigator>
         <Draw.Screen
-          name="homeScreen"
+          name="Welcome"
           component={HOME}
+          options={{
+            headerStyle: { backgroundColor: palette.accent1, borderBottomColor: palette.tertiary, borderBottomWidth: 5 },
+            headerTitleStyle: { color: system.white },
+            headerTintColor: system.white
+          }}
         />
         <Draw.Screen
-          name="mapScreen"
+          name="Explore"
           component={MAP}
         />
       </Draw.Navigator>
