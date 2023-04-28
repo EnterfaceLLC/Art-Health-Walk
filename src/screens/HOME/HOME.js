@@ -1,6 +1,6 @@
 //* REACT IMPORTS \\
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ImageBackground } from 'react-native';
 
 //* REACT NAVIGATION IMPORT \\
 import { useNavigation } from '@react-navigation/native';
@@ -12,8 +12,6 @@ import { Image } from 'expo-image';
 import { styles } from './styles';
 import { palette, system } from '../../theme/colors';
 import { Entypo } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-
 
 //* HOME SCREEN CODE \\
 
@@ -30,7 +28,7 @@ const HOME = () => {
           transition={1500}
         />
       </View>
-      <View style={styles.body}>
+      <ImageBackground source={require('../../../assets/Body2.png')} style={styles.body}>
         <View style={styles.content}>
           <View>
             <View style={styles.dots}>
@@ -43,7 +41,7 @@ const HOME = () => {
             </View>
             <Text style={styles.titleTxt}>Welcome Art Enthusiasts</Text>
           </View>
-          <Text style={styles.bodyTxt}>Cillum nostrud ipsum veniam duis nisi amet. Sit minim esse aliquip excepteur voluptate in ad pariatur elit. Ad culpa consequat magna reprehenderit laboris. Fugiat duis ut cupidatat duis labore exercitation veniam aliqua amet ea adipisicing anim id. Adipisicing cillum dolore amet sit aliquip deserunt.</Text>
+          <Text style={styles.bodyTxt}>Cillum nostrud ipsum veniam duis nisi amet. Sit minim esse aliquip excepteur voluptate in ad pariatur elit. Ad culpa consequat magna reprehenderit laboris. Fugiat duis ut cupidatat duis labore exercitation veniam aliqua amet ea adipisicing anim id. Adipisicing cillum dolore.</Text>
 
           <TouchableOpacity
             style={styles.button}
@@ -52,7 +50,7 @@ const HOME = () => {
             <Text style={styles.buttonTxt}>Get Started</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </ImageBackground>
     </View>
   );
 };

@@ -12,21 +12,22 @@ export const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: system.white,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  map: {
-    width: width,
-    aspectRatio: 3 / 4,
+  notice: {
+    fontSize: 24,
+    marginVertical: 30,
+  },
+  txt: {
 
   },
-  body: {
-    flex: 1,
-    // backgroundColor: palette.primary,
-    borderTopColor: palette.accent3,
-    borderTopWidth: 5,
+  enterface: {
+    fontSize: 24,
+    fontWeight: '500',
   },
-  markerImg: {
-    width: 65,
-    height: 65,
-    resizeMode: 'contain',
+  img: {
+    width: width,
+    aspectRatio: 4 / 3,
   },
 });
