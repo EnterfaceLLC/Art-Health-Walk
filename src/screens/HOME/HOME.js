@@ -28,7 +28,7 @@ const HOME = () => {
           transition={1500}
         />
       </View>
-      <ImageBackground source={require('../../../assets/Body2.png')} style={styles.body}>
+      <ImageBackground source={require('../../../assets/Body.png')} style={styles.body}>
         <View style={styles.content}>
           <View>
             <View style={styles.dots}>

@@ -6,6 +6,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import HOME from "../screens/HOME";
 import MAP from "../screens/MAP";
 import ENTITY from "../screens/ENTITY";
+import CarouselMap from "../screens/MAP/CAROUSEL";
 
 //* STYLES, THEME, ICON IMPORTS \\
 import { palette, system } from '../theme/colors';
@@ -40,9 +41,9 @@ const DrawerNav = () => {
         />
         <Draw.Screen
           name="Explore NOTO"
-          component={MAP}
+          component={CarouselMap}
           options={{
-            headerStyle: { backgroundColor: palette.accent3, borderBottomColor: palette.primary, borderBottomWidth: 5 },
+            headerStyle: { backgroundColor: palette.tertiary, borderBottomColor: palette.accent3, borderBottomWidth: 1 },
             headerTitleStyle: { color: system.white },
             headerTintColor: system.white,
             drawerActiveTintColor: palette.accent3,
@@ -53,7 +54,7 @@ const DrawerNav = () => {
         />
         <Draw.Screen
           name="NOTO Events"
-          component={ENTITY}
+          component={MAP}
           options={{
             headerStyle: { backgroundColor: palette.tertiary, borderBottomColor: palette.accent5, borderBottomWidth: 5 },
             headerTitleStyle: { color: system.white },

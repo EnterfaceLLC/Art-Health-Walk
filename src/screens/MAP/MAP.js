@@ -1,23 +1,27 @@
 //* REACT IMPORTS \\
-import React from 'react';
-import { View, Text, ImageBackground, Image } from 'react-native';
+import React, { useRef } from 'react';
+import { View, Text, ImageBackground, Image, Dimensions } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 //* REACT NATIVE MAPS \\
 import MapView, { Marker, Callout } from 'react-native-maps';
 
-//* STYLE, THEME IMPORTS \\
+//* REACT NATIVE CAROUSEL \\
+import Carousel from 'react-native-snap-carousel';
+
+//* STYLE, THEME, ICON IMPORTS \\
 import { styles } from './styles';
 
 //* MAP SCREEN CODE \\
-let artLocations = [
+const artLocations = [
   {
     name: 'Art Takes Over Topeka',
     location: {
       latitude: 39.06779027821405,
       longitude: -95.66678227856755,
     },
-    artist: 'Jennifer B., Melanie D. & Jewelia O.'
+    artist: 'Jennifer B., Melanie D. & Jewelia O.',
+    image: 'https://res.cloudinary.com/dwpkjvars/image/upload/v1682710257/TakeOverTopeka_k5vdsb.png'
   },
   {
     name: 'Sunflowers & Flying Pigs',
@@ -25,7 +29,8 @@ let artLocations = [
       latitude: 39.06810004520989,
       longitude: -95.66710313782096,
     },
-    artist: 'Jennifer B., Melanie D. & Jewelia O.'
+    artist: 'Jennifer B., Melanie D. & Jewelia O.',
+    image: 'https://res.cloudinary.com/dwpkjvars/image/upload/v1682710635/SunflowersAndFlyingPigs_aefafc.png'
   },
   {
     name: 'Aegir the Giant Brewer',
@@ -33,7 +38,8 @@ let artLocations = [
       latitude: 39.067079111800936,
       longitude: -95.66646980121732,
     },
-    artist: 'Emily Rudy'
+    artist: 'Emily Rudy',
+    image: 'https://res.cloudinary.com/dwpkjvars/image/upload/v1682710257/TakeOverTopeka_k5vdsb.png'
   },
 ];
 
@@ -43,6 +49,8 @@ const MAP = () => {
   const onRegionChange = (region) => {
     console.log(region);
   };
+
+  const isCarousel = useRef(null);
 
   const showLocations = () => {
     return artLocations.map((item, i) => {
@@ -56,13 +64,23 @@ const MAP = () => {
 
           <Image style={styles.markerImg} source={markerImg} />
 
-          <Callout>
+          {/* <Callout>
             <Text>{item.name}</Text>
-          </Callout>
+          </Callout> */}
         </Marker>
       )
     });
   };
+
+  const renderCarouselItem = ({ item, i }) => (
+    <View>
+      <Text>{item.name}</Text>
+      <Image
+        source={{ uri: item.image }}
+        style={{ width: 200, height: 100 }}
+      />
+    </View>
+  );
 
   return (
     <View style={styles.page}>
@@ -82,8 +100,16 @@ const MAP = () => {
       </MapView>
       <ImageBackground
         style={styles.body}
-        source={require('../../../assets/Footer2.png')}
+        source={require('../../../assets/Footer.png')}
       >
+        <Carousel
+          layout='tinder'
+          ref={isCarousel}
+          data={artLocations}
+          renderItem={renderCarouselItem}
+          sliderWidth={Dimensions.get('window').width}
+          itemWidth={200}
+        />
       </ImageBackground>
     </View >
   );

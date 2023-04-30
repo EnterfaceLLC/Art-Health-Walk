@@ -20,7 +20,6 @@ export const styles = StyleSheet.create({
     marginVertical: 30,
   },
   txt: {
-
   },
   enterface: {
     fontSize: 24,
