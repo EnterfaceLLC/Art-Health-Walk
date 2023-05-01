@@ -28,16 +28,17 @@ export const styles = StyleSheet.create({
   carousel: {
     position: 'absolute',
     bottom: 0,
-    marginBottom: 0,
-    padding: 5,
-    backgroundColor: 'rgba(0, 0, 0, 0.60)'
+    marginBottom: 15,
+    padding: 0,
+    // backgroundColor: 'rgba(0, 0, 0, 0.60)'
   },
   cardContainer: {
-    backgroundColor: palette.accent3,
+    backgroundColor: palette.tertiary,
     height: 150,
     width: 250,
     padding: 10,
-    borderRadius: 24
+    borderRadius: 24,
+    elevation: 3
   },
   cardImage: {
     height: 110,
@@ -46,7 +47,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     borderBottomLeftRadius: 24,
-    borderBottomRightRadius: 24
+    borderBottomRightRadius: 24,
   },
   cardTitle: {
     color: 'white',

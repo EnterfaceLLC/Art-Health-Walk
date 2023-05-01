@@ -8,13 +8,15 @@ import { useNavigation } from '@react-navigation/native';
 //* EXPO IMPORT \\
 import { Image } from 'expo-image';
 
+//* EXPO LINEAR GRADIENT \\
+import { LinearGradient } from 'expo-linear-gradient';
+
 //* STYLE, THEME, ICON IMPORTS \\
 import { styles } from './styles';
 import { palette, system } from '../../theme/colors';
 import { Entypo } from '@expo/vector-icons';
 
 //* HOME SCREEN CODE \\
-
 const HOME = () => {
   const navigation = useNavigation();
 
@@ -42,6 +44,7 @@ const HOME = () => {
             <Text style={styles.titleTxt}>Welcome Art Enthusiasts</Text>
           </View>
           <Text style={styles.bodyTxt}>Cillum nostrud ipsum veniam duis nisi amet. Sit minim esse aliquip excepteur voluptate in ad pariatur elit. Ad culpa consequat magna reprehenderit laboris. Fugiat duis ut cupidatat duis labore exercitation veniam aliqua amet ea adipisicing anim id. Adipisicing cillum dolore.</Text>
+
 
           <TouchableOpacity
             style={styles.button}

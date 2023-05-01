@@ -10,7 +10,11 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+//* REACT NATIVE MAPS \\
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
+
+//* REACT NAVIGATION IMPORT \\
+import { useNavigation } from '@react-navigation/native';
 
 //* REACT NATIVE CAROUSEL \\
 import Carousel from 'react-native-snap-carousel';
@@ -23,6 +27,8 @@ import { palette } from '../../theme/colors';
 const markerImg = { uri: 'https://res.cloudinary.com/dwpkjvars/image/upload/c_scale,w_200/v1682650222/NOTO/paint-brush-g2f9855a50_640_pll3tl.png' };
 
 const CarouselMap = () => {
+  const navigation = useNavigation();
+
 
   state = {
     markers: [],
@@ -73,7 +79,7 @@ const CarouselMap = () => {
   };
 
   renderCarouselItem = ({ item }) =>
-    <TouchableOpacity style={styles.cardContainer} >
+    <TouchableOpacity activeOpacity={.6} style={styles.cardContainer}>
       <Text style={styles.cardTitle}>{item.name}</Text>
       <Image style={styles.cardImage} source={{ uri: item.image }} />
     </TouchableOpacity>
@@ -119,7 +125,7 @@ const CarouselMap = () => {
       </MapView>
 
       <Carousel
-        layout='tinder'
+        layout='default'
         ref={(c) => { this._carousel = c; }}
         data={this.state.coordinates}
         containerCustomStyle={styles.carousel}
