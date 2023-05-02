@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
   body: {
     flex: 1,
     // backgroundColor: palette.secondary,
+    marginHorizontal: 10,
     padding: 20,
     borderTopRightRadius: 60,
     borderTopLeftRadius: 60,

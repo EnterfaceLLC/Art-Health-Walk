@@ -14,7 +14,7 @@ import {
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 
 //* REACT NAVIGATION IMPORT \\
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, CommonActions } from '@react-navigation/native';
 
 //* REACT NATIVE CAROUSEL \\
 import Carousel from 'react-native-snap-carousel';
@@ -79,18 +79,21 @@ const CarouselMap = () => {
   };
 
   renderCarouselItem = ({ item }) =>
-    <TouchableOpacity activeOpacity={.6} style={styles.cardContainer}>
+    <TouchableOpacity
+      style={styles.cardContainer}
+      onPress={() => navigation.navigate('Mural Info')}
+    >
       <Text style={styles.cardTitle}>{item.name}</Text>
       <Image style={styles.cardImage} source={{ uri: item.image }} />
     </TouchableOpacity>
 
   return (
     <View style={styles.page}>
-      <ImageBackground
+      {/* <ImageBackground
         style={styles.body}
         source={require('../../../assets/Footer.png')}
       >
-      </ImageBackground>
+      </ImageBackground> */}
       <MapView
         // provider={PROVIDER_GOOGLE}
         ref={map => this._map = map}

@@ -1,12 +1,14 @@
 //* NAVIGATION IMPORTS \\
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 //* SCREEN IMPORTS \\
 import HOME from "../screens/HOME";
 import MAP from "../screens/MAP";
 import ENTITY from "../screens/ENTITY";
 import CarouselMap from "../screens/MAP/CAROUSEL";
+import MURAL from "../screens/MURAL/MURAL";
 
 //* STYLES, THEME, ICON IMPORTS \\
 import { palette, system } from '../theme/colors';
@@ -41,9 +43,9 @@ const DrawerNav = () => {
         />
         <Draw.Screen
           name="Explore NOTO"
-          component={CarouselMap}
+          component={StackNav}
           options={{
-            headerStyle: { backgroundColor: palette.tertiary, borderBottomColor: palette.accent3, borderBottomWidth: 1 },
+            headerStyle: { backgroundColor: palette.tertiary, borderBottomColor: palette.accent3, borderBottomWidth: 5 },
             headerTitleStyle: { color: system.white },
             headerTintColor: system.white,
             drawerActiveTintColor: palette.accent3,
@@ -54,7 +56,7 @@ const DrawerNav = () => {
         />
         <Draw.Screen
           name="NOTO Events"
-          component={MAP}
+          component={ENTITY}
           options={{
             headerStyle: { backgroundColor: palette.tertiary, borderBottomColor: palette.accent5, borderBottomWidth: 5 },
             headerTitleStyle: { color: system.white },
@@ -80,6 +82,31 @@ const DrawerNav = () => {
         />
       </Draw.Navigator>
     </NavigationContainer>
+  );
+};
+
+//* DRAWER NAVIGATION CODE \\
+const Stack = createNativeStackNavigator();
+
+const StackNav = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name='Art Health Walk'
+        component={CarouselMap}
+      />
+      <Stack.Screen
+        name='Mural Info'
+        component={MURAL}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
   );
 };
 

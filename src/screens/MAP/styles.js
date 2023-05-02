@@ -17,8 +17,9 @@ export const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject
   },
   map: {
-    width: width,
-    aspectRatio: 2 / 3,
+    ...StyleSheet.absoluteFillObject
+    // width: width,
+    // aspectRatio: 1 / 2,
   },
   body: {
     flex: 1,
@@ -28,22 +29,24 @@ export const styles = StyleSheet.create({
   carousel: {
     position: 'absolute',
     bottom: 0,
-    marginBottom: 15,
+    marginBottom: 65,
+    // top: 0,
+    // marginTop: 15,
     padding: 0,
     // backgroundColor: 'rgba(0, 0, 0, 0.60)'
   },
   cardContainer: {
-    backgroundColor: palette.tertiary,
+    backgroundColor: palette.accent3,
     height: 150,
     width: 250,
     padding: 10,
     borderRadius: 24,
-    elevation: 3
+    elevation: 3,
   },
   cardImage: {
     height: 110,
-    width: 250,
-    bottom: 0,
+    width: 245,
+    bottom: 2,
     position: 'absolute',
     alignSelf: 'center',
     borderBottomLeftRadius: 24,
